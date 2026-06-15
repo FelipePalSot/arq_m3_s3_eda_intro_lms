@@ -19,7 +19,7 @@ import pe.edu.tecsup.lms.shared.domain.event.EventPublisher;
  * El controller depende de la interfaz, no de la implementación.
  */
 @Configuration
-public class BeanConfiguration {
+public class CoursesBeanConfiguration {
 
     @Bean
     public CreateCourseUseCase createCourseUseCase(CourseRepository repository, EventPublisher eventPublisher) {

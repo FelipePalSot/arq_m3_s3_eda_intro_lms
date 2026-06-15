@@ -15,7 +15,7 @@ public class CourseEventHandler {
     @EventListener
     public void handleCourseCreated(CourseCreatedEvent event)
     {
-        log.info("Course created event received : {}", event);
+        log.info("Course created event received q: {}", event);
 
     }
 

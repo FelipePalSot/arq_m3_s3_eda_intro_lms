@@ -1,0 +1,27 @@
+package pe.edu.tecsup.lms.Lesson.infrastructure.web.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.tecsup.lms.Lesson.application.CompleteLessonUseCase;
+
+import lombok.RequiredArgsConstructor;
+import pe.edu.tecsup.lms.Lesson.application.CompleteLessonUseCase;
+import pe.edu.tecsup.lms.Lesson.infrastructure.web.dto.CompleteLessonRequest;
+
+@RestController
+@RequestMapping("/api/courses")
+@RequiredArgsConstructor
+public class LessonController {
+    private final CompleteLessonUseCase completeLessonUseCase;
+
+    @PostMapping("/{id}/lessons/completed")
+    public ResponseEntity<Void> completeLesson(@PathVariable Long id, @RequestBody CompleteLessonRequest request){
+        completeLessonUseCase.completeLesson(
+                request.getStudentId(),
+                String.valueOf(id),
+                request.getLessonId(),
+                request.getLessonTitle()
+        );
+        return ResponseEntity.accepted().build();
+    }
+}
