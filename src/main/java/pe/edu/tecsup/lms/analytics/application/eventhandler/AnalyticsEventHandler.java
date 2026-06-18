@@ -18,7 +18,7 @@ public class AnalyticsEventHandler {
     @EventListener
     public void handleCourseCreated(CourseCreatedEvent event) throws InterruptedException {
 
-        log.info("Starting analytics ........ : {}", event);
+        log.info("Starting analytics ....pwd.... : {}", event);
         Thread.sleep(4000);
         log.info("Ending analytics ........ : {}", event.getTitle());
 
